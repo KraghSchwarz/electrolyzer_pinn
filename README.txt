@@ -12,6 +12,10 @@
 ####################################################################################
 
 
+A PyTorch based physics informed neural network (PINN) implementation
+for predicting electrolyzer performance degradation
+
+
 
 Structure:
 
@@ -66,10 +70,8 @@ The synthetic data sets contain time, current density and cell voltage.
 The experimental data set contains time, current density, temperature, and cell voltage
 
 The datasets are:
- - Square wave AST data (synthetic)
- - Ramp-and-hold (synthetic)
- - SolarPV power profile (synthetic)
- - Experimental PEMWE electrolyzer data
+ - SolarPV power profile (synthetic) based on NREL electrolyzer module
+ - Experimental AWE electrolyzer data provided by HydrogenPro
 
 
 Examples

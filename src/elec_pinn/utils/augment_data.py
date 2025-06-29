@@ -5,7 +5,7 @@ from plotly.subplots import make_subplots
 
 
 
-def augment_history_features(df, window_current='1h'):
+def augment_features(df, window_current='1h'):
     """
     Augment dataset with historical features to highlight historical and usage of the dataset.
 

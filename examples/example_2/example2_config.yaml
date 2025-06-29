@@ -5,7 +5,7 @@ seed: 42
 
 data:
   # Which dataset to load (e.g. name of subfolder or file stem)
-  dataset_name: "augmented_HPRO.csv"
+  dataset_name: "HPRO_electrolyzer_data.csv"
   # Time window (start, end)
   t0: 0.0
   t1: 24

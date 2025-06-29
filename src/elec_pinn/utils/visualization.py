@@ -43,9 +43,8 @@ def plot_pinn_performance(df, input_features, output_features,
     targ   = f"{output}_targ".lower()
     pred   = f"{output}_pred".lower()
     tcol = "t"
-    # detect missing targets
-    print(targ)
 
+    # detect missing targets
     targets_provided = df[targ].notna().all()
 
     # compute time breakpoints

@@ -332,7 +332,9 @@ class BasePINN(nn.Module, abc.ABC):
 
     def plot_losses(self, save_path):
         """Plot training and validation losses over epochs."""
+
         import matplotlib.pyplot as plt
+
         epochs = range(1, len(self.epoch_losses["total"]) + 1)
         plt.figure(figsize=(8, 3.6))
         plt.subplot(1, 2, 1)
