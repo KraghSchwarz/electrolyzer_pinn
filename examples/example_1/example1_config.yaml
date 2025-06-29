@@ -1,0 +1,65 @@
+# config.yaml
+
+# Global seed for reproducibility
+seed: 42
+
+data:
+  # Which dataset to load (e.g. name of subfolder or file stem)
+  dataset_name: "DegradEL_training_data.csv"
+  # Time window (start, end)
+  t0: 0.0
+  t1: 1
+  # Columns to use as inputs and outputs
+  feature_names:
+    - "t"
+    - "j"
+  target_names:
+    - "U_deg"
+  # Min/max scaling range
+  scale_range:
+    - 0
+    - 1
+  # Fractions of data for train/val/test
+  train_frac: 0.7
+  val_frac: 0.1
+
+model:
+  # Which PINN variant to use: FullPINN, GPINN, PhysicsPINN, NoPINN
+  type: "FullPINN"
+  # Network architecture / physics hyperparameters
+  f_hidden_dim: 48
+  g_hidden_dim: 48
+  f_layers: 4
+  g_layers: 4
+  f_omega: 20
+  g_omega: 20
+  pde_weight: 1.0
+
+training:
+  # Number of epochs
+  epochs: 10
+  # Save a checkpoint every N epochs
+  save_freq: 10
+  # Early-stopping patience (in validation checks)
+  patience: 100000
+  # Learning rate
+  lr: 0.00001
+  # Batch sizes for train, val, test
+  batch_sizes:
+    - 1280   # train
+    - 1280   # val
+    - 1280   # test
+
+logging:
+  level: INFO
+  console: true        # <— new
+  filename: logs/train.log   # instead of `file`
+  format: "%(asctime)s %(levelname)s %(name)s: %(message)s"  # instead of `fmt`
+  file_mode: w         # if you like
+
+
+# Optional: where to save final artifacts
+output:
+  model_dir: "saved_models/"
+  results_dir: "results/"
+  save_plots: true
