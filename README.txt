@@ -16,14 +16,19 @@
 Structure:
 
 - electrolyzer_PINN/
-|-- .github/
 |-- .venv/ (library root)
 |-- configs/
-    |-- configs.yaml
+|   |-- configs.yaml
 |-- datasets/
-|-- docs/
+|   |-- NREL_solar
+|   |-- HPRO_electrolysis_test_cell
 |-- examples/
-|   |-- example1_notebook.txt
+|   |-- example1
+|       |-- example1.ipynb
+|       |-- example1_config.yaml
+|   |-- example2
+|       |-- example2.ipynb
+|       |-- example2_config.yaml
 |-- src/
 |   |-- elec_pinn/
 |       |-- data/
@@ -39,6 +44,7 @@ Structure:
 |           |-- __init__.py
 |           |-- logging.py
 |           |-- visualization.py
+|           |-- augment_data.py
 |       |-- __init__.py
 |       |-- cli.py
 |-- tests/
@@ -51,13 +57,13 @@ Structure:
 Explanations:
 
 
-
-
 Datasets:
-Four datasets are included to play around with. Three of the four data sets are based on the synthethic NREL electrolyzer module. The last is based on experimental data.
+Four datasets are included to play around with.
+Three of the four data sets are based on the synthethic NREL electrolyzer module.
+The last is based on experimental data.
 
 The synthetic data sets contain time, current density and cell voltage.
-The experimental data set contains time, current density, temperature, cell voltage, and gas purities. 
+The experimental data set contains time, current density, temperature, and cell voltage
 
 The datasets are:
  - Square wave AST data (synthetic)
@@ -66,8 +72,14 @@ The datasets are:
  - Experimental PEMWE electrolyzer data
 
 
-
 Examples
+Two examples are included in the "examples" directory as Jupyter notebooks.
+
+Example1: Demonstration on how to train the PINN and evaluate performance
+Example2: Demonstration on how to train the PINN, evaluate its performance,
+and then forecast electrolyzer degradation on a new dataset using the learned degradation parameters
 
 
 
+
+Code:
